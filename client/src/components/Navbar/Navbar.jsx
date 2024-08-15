@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.jpeg";
 
@@ -12,34 +13,55 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           <div className="flex text-white items-center gap-4 font-bold text-2xl">
             <img src={Logo} alt="" className="w-10" />
-            <span>X2-SPACE</span>
+            <span>StarBound</span>
           </div>
           <div className="text-white hidden md:block">
             <ul className="flex items-center gap-6 text-xl py-4 sm:py-0 ">
               <li>
-                <a href="#">About</a>
+                <ScrollLink
+                  to="spotlight"
+                  smooth={true}
+                  duration={1000}
+                  className="cursor-pointer"
+                >
+                  Spotlight
+                </ScrollLink>
               </li>
               <li>
-                <a href="#">Technology</a>
+                <ScrollLink
+                  to="news"
+                  smooth={true}
+                  duration={1000}
+                  className="cursor-pointer"
+                >
+                  News
+                </ScrollLink>
               </li>
+
               <li>
-                <a href="#">Galaxy</a>
-              </li>
-              <li>
-                <a href="#">Satellite</a>
+                <ScrollLink
+                  to="missions"
+                  smooth={true}
+                  duration={1000}
+                  className="cursor-pointer"
+                >
+                  Missions
+                </ScrollLink>
               </li>
             </ul>
           </div>
           <div className="flex gap-2">
-            <Link to="/login">
-              <button className="text-white border-2 border-white px-3 py-1 rounded-md">
-                Login
-              </button>
+            <Link
+              to="/login"
+              className="cursor-pointer text-white border-2 border-white px-3 py-1 rounded-md"
+            >
+              Login
             </Link>
-            <Link to="/signup">
-              <button className="text-white border-2 border-white px-3 py-1 rounded-md">
-                Signup
-              </button>
+            <Link
+              to="/signup"
+              className="cursor-pointer text-white border-2 border-white px-3 py-1 rounded-md"
+            >
+              Signup
             </Link>
           </div>
         </div>

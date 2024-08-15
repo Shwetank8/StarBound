@@ -11,21 +11,21 @@ export default function Hero() {
           space-y-4 lg:pr-36"
           >
             <h1 data-aos="fade-up" className="text-5xl font-bold uppercase">
-              India's Space Marvels: Chandrayaan-2 and Mangalyaan
+              Discover the Cosmos, Explore the Infinite
             </h1>
-            <p data-aos="fade-up" data-aos-delay="300">
-              Discover India's space prowess through Chandrayaan-2's lunar
-              exploration and Mangalyaan's journey to Mars. Unveil the
-              scientific wonders behind these missions, showcasing India's
-              impact on the celestial stage.
+            <p data-aos="fade-up text-2xl" data-aos-delay="300">
+              Explore the wonders of the cosmos with our website, a dedicated
+              hub for space enthusiasts. Dive into the latest astronomical news,
+              breathtaking images, and detailed information on space missions
+              from around the world.
             </p>
-            <button
+            {/* <button
               data-aos="fade-up"
               data-aos-delay="500"
               className="primary-button"
             >
               Learn More
-            </button>
+            </button> */}
           </div>
           <div></div>
         </div>

@@ -11,7 +11,7 @@ import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import MoreNews from "./components/MoreNews/MoreNews";
-import Missions from "./components/Missions/Missions"; // Import the new component
+import Missions from "./components/Missions/Missions";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -42,11 +42,17 @@ function App() {
                 <Navbar />
                 <Main />
               </div>
-              <Apod />
-              <Exploration />
-              <Banner />
-              <Banner2 />
-              <Footer />
+              <section id="spotlight">
+                <Apod />
+              </section>
+              <section id="news">
+                <Exploration />
+              </section>
+              <section id="missions">
+                <Banner />
+                <Banner2 />
+              </section>
+              {/* <Footer /> */}
             </div>
           }
         />
@@ -68,8 +74,7 @@ function App() {
         />
         <Route path="/exploration" element={<Exploration />} />
         <Route path="/apod" element={<Apod />} />
-        <Route path="/missions" element={<Missions />} />{" "}
-        {/* Add the new route */}
+        <Route path="/missions" element={<Missions />} />
         <Route path="/news" element={<MoreNews />} />
       </Routes>
     </Router>
