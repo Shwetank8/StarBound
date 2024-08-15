@@ -1,0 +1,15 @@
+/* src/components/MoreNews/MoreNews.css */
+@import url("https://fonts.googleapis.com/css2?family=Font+from+the+Stars:wght@400&family=Barlow:wght@400&display=swap");
+
+.news-item {
+  border-left: 4px solid #00f5d4; /* Optional: Blue accent for news items */
+  margin-bottom: 2rem; /* Add space between news items */
+}
+
+.news-item h2 {
+  font-size: 40px; /* Heading size */
+}
+
+.news-item p {
+  font-size: 18px; /* Description size */
+}
