@@ -1,0 +1,15 @@
+.missions-container {
+  background: url("path-to-your-space-background-image.jpg") no-repeat center
+    center fixed;
+  background-size: cover;
+}
+
+.mission-card {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly visible border */
+}
+
+.mission-card:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+  border-color: rgba(255, 255, 255, 0.5); /* More visible border on hover */
+}
