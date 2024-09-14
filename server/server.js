@@ -5,14 +5,25 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 // const cron = require('node-cron');
 
+
 dotenv.config();
 const app = express();
 
 // Middleware setup
 app.use(bodyParser.json());
 
+
 // CORS configuration
-app.use(cors());
+const allowedOrigins = [process.env.FRONTEND_URL];
+app.use(cors({
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 // Import routes
 const authRoute = require("./route/authRoute");
@@ -58,9 +69,17 @@ app.use("/pod", podRoute); //   ASTRONOMY PICTURE OF THE DAY API
 // app.use('/imgvideo', imgvideoRoute);                      //   NASA IMAGE AND VIDEO LIBRARY API
 app.use("/news", newsRoutes); //NEWS API'S
 
+// Global Error Handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: 'Something went wrong!' });
+});
+
 // Start the server
-app.listen(8000, () => {
-  console.log("Listening");
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
   // fetchAndStoreNews_newsNow(),
   // fetchAndStoreNews_googleNews(),
   seedMissions();
