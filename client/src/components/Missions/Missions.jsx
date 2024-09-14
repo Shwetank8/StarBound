@@ -10,7 +10,7 @@ export default function Missions() {
   useEffect(() => {
     const fetchMissions = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/mission");
+        const response = await axios.get("https://starboundapi.vercel.app/");
         setMissions(response.data);
       } catch (error) {
         console.error("Failed to fetch missions data:", error);
