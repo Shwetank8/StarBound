@@ -12,7 +12,7 @@ export default function Services() {
     const fetchNews = async () => {
       try {
         // Replace with your API endpoint to fetch news articles from your database
-        const response = await axios.get("https://starboundapi.vercel.app/");
+        const response = await axios.get("http://localhost:8000/news");
         const filteredArticles = response.data.slice(0, 3); // Get the top 3 articles
         setNewsArticles(filteredArticles);
       } catch (error) {
