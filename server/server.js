@@ -36,7 +36,7 @@ const seedMissions = require("./seedMission");
 const Mission = require("./model/Missions");
 
 // Route to get all missions
-app.get("/mission", async (req, res) => {
+app.get("mission", async (req, res) => {
   try {
     const missions = await Mission.find();
     res.json(missions);
@@ -46,7 +46,7 @@ app.get("/mission", async (req, res) => {
 });
 
 // Route to get the top 2 missions
-app.get("/mission/top", async (req, res) => {
+app.get("mission/top", async (req, res) => {
   try {
     const missions = await Mission.find().sort({ launchDate: -1 }).limit(2);
     res.json(missions);
@@ -64,10 +64,10 @@ mongoose
   .catch((error) => console.log(error));
 
 // Set up routes
-app.use("/auth", authRoute);
-app.use("/pod", podRoute); //   ASTRONOMY PICTURE OF THE DAY API
+app.use("auth", authRoute);
+app.use("pod", podRoute); //   ASTRONOMY PICTURE OF THE DAY API
 // app.use('/imgvideo', imgvideoRoute);                      //   NASA IMAGE AND VIDEO LIBRARY API
-app.use("/news", newsRoutes); //NEWS API'S
+app.use("news", newsRoutes); //NEWS API'S
 
 // Global Error Handler
 app.use((err, req, res, next) => {

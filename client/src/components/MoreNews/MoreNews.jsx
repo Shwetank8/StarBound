@@ -8,7 +8,7 @@ const MoreNews = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get("https://starboundapi.vercel.app/news");
+        const response = await axios.get("http://localhost:8000/news");
         setNewsArticles(response.data);
       } catch (error) {
         setError("Failed to fetch news articles");
