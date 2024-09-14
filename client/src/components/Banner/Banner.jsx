@@ -8,7 +8,7 @@ export default function Banner() {
   useEffect(() => {
     const fetchMission = async () => {
       try {
-        const response = await axios.get("https://starboundapi.vercel.app/");
+        const response = await axios.get("http://localhost:8000/mission");
         setMission(response.data[0]); // Set the first mission
       } catch (error) {
         console.error("Failed to fetch mission data:", error);
