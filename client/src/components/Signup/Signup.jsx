@@ -14,7 +14,7 @@ const Signup = () => {
     setError(null);
 
     try {
-      const response = await axios.post("http://localhost:8000/auth/signup", {
+      const response = await axios.post("https://starboundapi.vercel.app/", {
         username,
         email,
         password,
